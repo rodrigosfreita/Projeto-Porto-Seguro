@@ -1,124 +1,113 @@
 package model;
 
+public class ElectricalFailures {
 
-public class FalhasEletricas {
+    private Vehicle vehicle;
+    private boolean alternators;
+    private boolean alternatorBelt;
+    private boolean fuses;
+    private boolean ignitionSystem;
+    private boolean lighting;
+    private boolean cables;
+    private boolean sparkPlugs;
+    private boolean coil;
 
-	private Veiculo veiculo;
-	private boolean alternadores;
-	private boolean correiaAlternador;
-	private boolean fusiveis ;
-	private boolean sistemaIgnicao;
-	private boolean iluminacao;
-	private boolean cabos;
-	private boolean velas;
-	private boolean bobina;
+    public ElectricalFailures(Vehicle vehicle, boolean alternators, boolean alternatorBelt,
+                              boolean fuses, boolean ignitionSystem, boolean lighting, boolean cables,
+                              boolean sparkPlugs, boolean coil) {
+        this.vehicle = vehicle;
+        this.alternators = alternators;
+        this.alternatorBelt = alternatorBelt;
+        this.fuses = fuses;
+        this.ignitionSystem = ignitionSystem;
+        this.lighting = lighting;
+        this.cables = cables;
+        this.sparkPlugs = sparkPlugs;
+        this.coil = coil;
 
-	
-	public FalhasEletricas(Veiculo veiculo, boolean alternadores, boolean correiaAlternador,
-			boolean fusiveis, boolean sistemaIgnicao, boolean iluminação, boolean cabos,
-			boolean velas, boolean bobina) {	
-		
-		this.veiculo = veiculo;
-		this.alternadores = alternadores;
-		this.correiaAlternador = correiaAlternador;
-		this.fusiveis = fusiveis;
-		this.sistemaIgnicao = sistemaIgnicao;
-		this.iluminacao = iluminação;
-		this.cabos = cabos;
-		this.velas = velas;
-		this.bobina = bobina;
-		
-		
-		System.out.println("Construtor cheio - objeto FalhasEletricas criado!");
+        System.out.println("Full constructor - ElectricalFailures object created!");
+    }
 
-	}
-	
-	public FalhasEletricas() {
-		System.out.println("Construtor vazio - objeto FalhasEletricas criado!");
-	};
-	
-	public Veiculo getVeiculo() {
-		return veiculo;
-	}
-	
-	public void setVeiculo (Veiculo veiculo) {
-		this.veiculo = veiculo;
-	}
-	
-	public boolean getAlternadores() {
-		return alternadores;
-	}
-	
-	public void setAlternadores(boolean alternadores) {	
-		this.alternadores = alternadores;
-	}
-	
-	public boolean getCorreiaAlternador() {
-		return correiaAlternador;
-	}
-	
-	public void setCorreiaAlternador(boolean correiaAlternador) {
-		this.correiaAlternador = correiaAlternador;
-	}
-	
-	public boolean getFusiveis() {
-		return fusiveis;
-	}
-	
-	public void setFusiveis(boolean fusiveis) {
-		this.fusiveis = fusiveis;
-	}
-	
-	public boolean getSistemaIgnicao() {
-		return sistemaIgnicao;
-	}
-	
-	public void setSistemaIgnicao(boolean sistemaIgnicao) {
-		this.sistemaIgnicao = sistemaIgnicao;
-	}
-	
-	public  boolean getiLuminacao() {
-		return iluminacao;
-	}
-	
-	public void setiLuminacao(boolean iluminacao) {
-		this.iluminacao = iluminacao;
-	}
-	
-	public boolean getCabos() {
-		return cabos;
-	}
-	
-	public void setCabos(boolean cabos) {
-		this.cabos = cabos;
-	}
-	
-	public boolean getVelas() {
-		return velas;
-	}
-	
-	public void setVelas(boolean velas) {
-		this.velas = velas;
-	}
-	
-	public boolean getBobina() {
-		return bobina;
-	}
-	
-	public void setBobina (boolean bobina) {
-		this.bobina = bobina;
-	}
-	
-	
-	
-	@Override
-	public String toString (){
-		return "FalhasEletricas[veiculo=" + veiculo + ",alternadores=" + alternadores + "correiaAlternador="+ 
-				correiaAlternador +",fusiveis=" + fusiveis + ",sistemaIgnicao=" + sistemaIgnicao + ",iluminacao="
-			+ "" + iluminacao + ",cabos=" + cabos +",velas=" + velas + 
-			",bobina="+ bobina +"]";
-	}
-	
+    public ElectricalFailures() {
+        System.out.println("Empty constructor - ElectricalFailures object created!");
+    }
 
-	
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public boolean getAlternators() {
+        return alternators;
+    }
+
+    public void setAlternators(boolean alternators) {
+        this.alternators = alternators;
+    }
+
+    public boolean getAlternatorBelt() {
+        return alternatorBelt;
+    }
+
+    public void setAlternatorBelt(boolean alternatorBelt) {
+        this.alternatorBelt = alternatorBelt;
+    }
+
+    public boolean getFuses() {
+        return fuses;
+    }
+
+    public void setFuses(boolean fuses) {
+        this.fuses = fuses;
+    }
+
+    public boolean getIgnitionSystem() {
+        return ignitionSystem;
+    }
+
+    public void setIgnitionSystem(boolean ignitionSystem) {
+        this.ignitionSystem = ignitionSystem;
+    }
+
+    public boolean getLighting() {
+        return lighting;
+    }
+
+    public void setLighting(boolean lighting) {
+        this.lighting = lighting;
+    }
+
+    public boolean getCables() {
+        return cables;
+    }
+
+    public void setCables(boolean cables) {
+        this.cables = cables;
+    }
+
+    public boolean getSparkPlugs() {
+        return sparkPlugs;
+    }
+
+    public void setSparkPlugs(boolean sparkPlugs) {
+        this.sparkPlugs = sparkPlugs;
+    }
+
+    public boolean getCoil() {
+        return coil;
+    }
+
+    public void setCoil(boolean coil) {
+        this.coil = coil;
+    }
+
+    @Override
+    public String toString() {
+        return "ElectricalFailures[vehicle=" + vehicle + ", alternators=" + alternators + ", alternatorBelt=" +
+                alternatorBelt + ", fuses=" + fuses + ", ignitionSystem=" + ignitionSystem + ", lighting=" +
+                lighting + ", cables=" + cables + ", sparkPlugs=" + sparkPlugs + ", coil=" + coil + "]";
+    }
 }
