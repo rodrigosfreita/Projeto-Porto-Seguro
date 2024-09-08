@@ -1,125 +1,116 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
-public class Historico {
+public class History {
 
-		private Apolice apolice;
-		private Cliente cliente;
-		private List<Veiculo> veiculos;
-		private String irregularidades;
-		private String localSinistro;
-		private String tempoHabilitacao;
-		private String multas;
-		private String coberturaSinistro;
-		private String descricaoDano;
+    private Policy policy;
+    private Client client;
+    private List<Vehicle> vehicles;
+    private String irregularities;
+    private String accidentLocation;
+    private String licenseDuration;
+    private String fines;
+    private String accidentCoverage;
+    private String damageDescription;
 
-		
-		public Historico(Apolice apolice, Cliente cliente, List<Veiculo> veiculos, String irregularidades, String localSinistro, String tempoHabilitação,
-				String multas, String coberturaSinistro, String descricaoDano) {	
-			
-			this.apolice = apolice;
-			this.cliente = cliente;
-			this.veiculos = veiculos;
-			this.irregularidades = irregularidades;
-			this.localSinistro = localSinistro;
-			this.tempoHabilitacao = tempoHabilitação;
-			this.multas = multas;
-			this.coberturaSinistro = coberturaSinistro;
-			this.descricaoDano = descricaoDano;
-			
-			System.out.println("Construtor cheio - objeto Historico criado!");
+    public History(Policy policy, Client client, List<Vehicle> vehicles, String irregularities, String accidentLocation,
+                   String licenseDuration, String fines, String accidentCoverage, String damageDescription) {
+        this.policy = policy;
+        this.client = client;
+        this.vehicles = vehicles;
+        this.irregularities = irregularities;
+        this.accidentLocation = accidentLocation;
+        this.licenseDuration = licenseDuration;
+        this.fines = fines;
+        this.accidentCoverage = accidentCoverage;
+        this.damageDescription = damageDescription;
 
-		}
-		
-		public Historico() {
-			System.out.println("Construtor vazio - objeto Historico criado!");
-		};
-		
-		public Apolice getVeiculo() {
-			return apolice;
-		}
-		
-		public void setVeiculo (Apolice veiculo) {
-			this.apolice = veiculo;
-		}
-		
-		public Cliente getVeiculoCliente() {
-			return cliente;
-		}
-		
-		public void setVeiculoCliente(Cliente veiculoCliente) {	
-			this.cliente = veiculoCliente;
-		}
-		
-		public List<Veiculo> getVeiculos() {
-			return veiculos;
-		}
-		
-		public void setVeiculos(List<Veiculo> veiculos) {
-			this.veiculos = veiculos;
-		}
-		
-		
-		
-		public String getIrregularidades() {
-			return irregularidades;
-		}
-		
-		public void setIrregularidades(String irregularidades) {
-			this.irregularidades = irregularidades;
-		}
-		
-		public  String getLocalSinistro() {
-			return localSinistro;
-		}
-		
-		public void setlocalSinistro(String localSinistro) {
-			this.localSinistro = localSinistro;
-		}
-		
-		public String getTempoHabilitação() {
-			return tempoHabilitacao;
-		}
-		
-		public void setTempoHabilitação(String tempoHabilitação) {
-			this.tempoHabilitacao = tempoHabilitação;
-		}
-		
-		public String getMultas() {
-			return multas;
-		}
-		
-		public void setMultas(String multas) {
-			this.multas = multas;
-		}
-		
-		public String getCoberturaSinistro() {
-			return coberturaSinistro;
-		}
-		
-		public void setCoberturaSinistro (String coberturaSinistro) {
-			this.coberturaSinistro = coberturaSinistro;
-		}
-		
-		public String getDescricaoDano() {
-			return descricaoDano;
-		}
-		
-		public void setDescricaoDano (String descricaoDano) {
-			this.descricaoDano = descricaoDano;
-		}
-		
-		
-		@Override
-		public String toString (){
-			return "Historico[veiculo=" + apolice + ",veiculoCliente=" + cliente + "veiculos="+ 
-					veiculos + ",irregularidades=" + irregularidades + ",localSinistro="
-				+ "" + localSinistro + ",tempoHabilitação=" + tempoHabilitacao +",multas=" + multas + 
-				",coberturaSinistro="+ coberturaSinistro +",descricaoDano=" + descricaoDano +"]";
-		}
-		
-	
+        System.out.println("Full constructor - History object created!");
+    }
+
+    public History() {
+        System.out.println("Empty constructor - History object created!");
+    }
+
+    public Policy getPolicy() {
+        return policy;
+    }
+
+    public void setPolicy(Policy policy) {
+        this.policy = policy;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public String getIrregularities() {
+        return irregularities;
+    }
+
+    public void setIrregularities(String irregularities) {
+        this.irregularities = irregularities;
+    }
+
+    public String getAccidentLocation() {
+        return accidentLocation;
+    }
+
+    public void setAccidentLocation(String accidentLocation) {
+        this.accidentLocation = accidentLocation;
+    }
+
+    public String getLicenseDuration() {
+        return licenseDuration;
+    }
+
+    public void setLicenseDuration(String licenseDuration) {
+        this.licenseDuration = licenseDuration;
+    }
+
+    public String getFines() {
+        return fines;
+    }
+
+    public void setFines(String fines) {
+        this.fines = fines;
+    }
+
+    public String getAccidentCoverage() {
+        return accidentCoverage;
+    }
+
+    public void setAccidentCoverage(String accidentCoverage) {
+        this.accidentCoverage = accidentCoverage;
+    }
+
+    public String getDamageDescription() {
+        return damageDescription;
+    }
+
+    public void setDamageDescription(String damageDescription) {
+        this.damageDescription = damageDescription;
+    }
+
+    @Override
+    public String toString() {
+        return "History[policy=" + policy + ", client=" + client + ", vehicles=" + vehicles + 
+               ", irregularities=" + irregularities + ", accidentLocation=" + accidentLocation + 
+               ", licenseDuration=" + licenseDuration + ", fines=" + fines + 
+               ", accidentCoverage=" + accidentCoverage + ", damageDescription=" + damageDescription + "]";
+    }
 }
