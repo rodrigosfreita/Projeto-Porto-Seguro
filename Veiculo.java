@@ -1,116 +1,115 @@
 package model;
 
-public class Veiculo {
+public class Order {
 
-	private Cliente cliente;
-	private int anoFabricacao;
-	private String marca;
-	private int anoModelo ;
-	private String descricaoModelo;
-	private int valorVeiculo;
-	private String combustivel;
-	private String motor;
-	private int velocidade;
-	
-	
-	public Veiculo(Cliente cliente, int anoFabricacao, String marca, int anoModelo, String descricaoModelo, int valorVeiculo, String combustivel, String motor, int velocidade) {		
-		this.cliente = cliente;
-		this.anoFabricacao = anoFabricacao;
-		this.marca = marca;
-		this.anoModelo = anoModelo;
-		this.descricaoModelo = descricaoModelo;
-		this.valorVeiculo = valorVeiculo;
-		this.combustivel = combustivel;
-		this.motor = motor;
-		this.velocidade = velocidade;
-		
-		System.out.println("Construtor cheio - objeto Veiculo criado!");
+    private Budget budget;
+    private Workshops workshop;
+    private int bodyworkNumber;
+    private int workshopNumber;
+    private Client clientCpf;
+    private int repairCost;
+    private int revisionCost;
+    private int invoiceNumber;
+    private int purchaseCode;
 
-	}
-	
-	public Veiculo() {
-		System.out.println("Construtor vazio - objeto Veiculo criado!");
-	};
-	
-	public Cliente getCliente() {
-		return cliente;
-	}
-	
-	public void setCliente (Cliente cliente) {
-		this.cliente = cliente;
-	}
-	
-	public int getAnoFabricacao() {
-		return anoFabricacao;
-	}
-	
-	public void setAnoFabricacao(int anoFabricacao) {	
-		this.anoFabricacao = anoFabricacao;
-	}
-	
-	public String getMarca() {
-		return marca;
-	}
-	
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-	
-	public int getAnoModelo() {
-		return anoModelo;
-	}
-	
-	public void setAnoModelo(int anoModelo) {
-		this.anoModelo = anoModelo;
-	}
-	
-	public String getDescricaoModelo() {
-		return descricaoModelo;
-	}
-	
-	public void setDescricaoModelo(String descricaoModelo) {
-		this.descricaoModelo = descricaoModelo;
-	}
-	
-	public  int getValorVeiculo() {
-		return valorVeiculo;
-	}
-	
-	public void setValorVeiculo(int valorVeiculo) {
-		this.valorVeiculo = valorVeiculo;
-	}
-	
-	public String getCombustivel() {
-		return combustivel;
-	}
-	
-	public void setCombustivel(String combustivel) {
-		this.combustivel = combustivel;
-	}
-	
-	public String getMotor() {
-		return motor;
-	}
-	
-	public void setMotor(String motor) {
-		this.motor = motor;
-	}
-	
-	public int getVelocidade() {
-		return velocidade;
-	}
-	
-	public void setVelocidade (int velocidade) {
-		this.velocidade = velocidade;
-	}
-	
-	@Override
-	public String toString (){
-		return "Veiculo[cliente=" + cliente + ",anoFabricacao=" + anoFabricacao + ",marca="+ 
-	marca +",anoModelo=" + anoModelo + ",descricaoModelo=" + descricaoModelo + ",valorVeiculo="
-			+ "" + valorVeiculo + ",combustivel=" + combustivel +",motor=" + motor + 
-			",velocidade="+ velocidade +"]";
-	}
-	
+    public Order(Budget budget, Workshops workshop, int bodyworkNumber,
+                 int workshopNumber, Client clientCpf, int repairCost, int revisionCost,
+                 int invoiceNumber, int purchaseCode) {
+        
+        this.budget = budget;
+        this.workshop = workshop;
+        this.bodyworkNumber = bodyworkNumber;
+        this.workshopNumber = workshopNumber;
+        this.clientCpf = clientCpf;
+        this.repairCost = repairCost;
+        this.revisionCost = revisionCost;
+        this.invoiceNumber = invoiceNumber;
+        this.purchaseCode = purchaseCode;
 
+        System.out.println("Full constructor - Order object created!");
+    }
+
+    public Order() {
+        System.out.println("Empty constructor - Order object created!");
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+
+    public int getWorkshopNumber() {
+        return workshopNumber;
+    }
+
+    public void setWorkshopNumber(int workshopNumber) {
+        this.workshopNumber = workshopNumber;
+    }
+
+    public Workshops getWorkshop() {
+        return workshop;
+    }
+
+    public void setWorkshop(Workshops workshop) {
+        this.workshop = workshop;
+    }
+
+    public int getBodyworkNumber() {
+        return bodyworkNumber;
+    }
+
+    public void setBodyworkNumber(int bodyworkNumber) {
+        this.bodyworkNumber = bodyworkNumber;
+    }
+
+    public Client getClientCpf() {
+        return clientCpf;
+    }
+
+    public void setClientCpf(Client clientCpf) {
+        this.clientCpf = clientCpf;
+    }
+
+    public int getRepairCost() {
+        return repairCost;
+    }
+
+    public void setRepairCost(int repairCost) {
+        this.repairCost = repairCost;
+    }
+
+    public int getRevisionCost() {
+        return revisionCost;
+    }
+
+    public void setRevisionCost(int revisionCost) {
+        this.revisionCost = revisionCost;
+    }
+
+    public int getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
+
+    public int getPurchaseCode() {
+        return purchaseCode;
+    }
+
+    public void setPurchaseCode(int purchaseCode) {
+        this.purchaseCode = purchaseCode;
+    }
+
+    public String generateOrder() {
+        return "Order[budget=" + budget + ", workshop=" + workshop + 
+               ", bodyworkNumber=" + bodyworkNumber + ", workshopNumber=" + workshopNumber + 
+               ", clientCpf=" + clientCpf + ", repairCost=" + repairCost + 
+               ", revisionCost=" + revisionCost + ", invoiceNumber=" + invoiceNumber + 
+               ", purchaseCode=" + purchaseCode + ", purchaseDate]";
+    }
 }
