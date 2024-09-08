@@ -1,77 +1,60 @@
 package model;
 
-public class AutoAvaliação {
+public class SelfEvaluation {
 
-	private FalhasEletricas falhasEletricas;
-	private FalhasMecanicas falhasMecanicas;
-	private Funilaria funilaria;
-	
+    private ElectricalFailures electricalFailures;
+    private MechanicalFailures mechanicalFailures;
+    private Bodywork bodywork;
 
-	
-	public AutoAvaliação(FalhasEletricas falhasEletricas, FalhasMecanicas falhasMecanicas, Funilaria finilaria) {	
-		
-		this.falhasEletricas = falhasEletricas;
-		this.falhasMecanicas = falhasMecanicas;
-		this.funilaria = funilaria;
-		
+    public SelfEvaluation(ElectricalFailures electricalFailures, MechanicalFailures mechanicalFailures, Bodywork bodywork) {
+        this.electricalFailures = electricalFailures;
+        this.mechanicalFailures = mechanicalFailures;
+        this.bodywork = bodywork;
 
-		
-		
-		System.out.println("Construtor cheio - objeto AutoAvaliação criado!");
+        System.out.println("Full constructor - SelfEvaluation object created!");
+    }
 
-	}
-	
-	public AutoAvaliação() {
-	};
-	
-	public FalhasEletricas getFalhasEletricas() {
-		return falhasEletricas;
-	}
-	
-	public void setFalhasEletricas (FalhasEletricas falhasEletricas) {
-		this.falhasEletricas = falhasEletricas;
-	}
-	
-	public FalhasMecanicas getFalhasMecanicas() {
-		return falhasMecanicas;
-	}
-	
-	public void setFalhasMecanicas(FalhasMecanicas falhasMecanicas) {	
-		this.falhasMecanicas = falhasMecanicas;
-	}
-	
-	public Funilaria getFunilaria() {
-		return funilaria;
-	}
-	
-	public void setFinilaria(Funilaria funilaria) {
-		this.funilaria = funilaria;
-	}
-	
-	
-	
-	
-	@Override
-	public String toString (){
-		return "AutoAvaliação[falhasEletricas=" + falhasEletricas + ",falhasMecanicas=" + falhasMecanicas + "finilaria="+ 
-				funilaria + 
-				 "]";
-	}
-	public String autoAvaliação() {
-		
-		String autoAvaliação =
-		this.falhasEletricas.toString() + " " +
-		this.falhasMecanicas.toString() + " " +
-		this.funilaria.toString() + " " ;
-		 
-		
-		String msg = "Essas são as seguintes falhas: falha Eletrica "+ this.falhasEletricas.toString() +"Essas são as seguintes falhas:"
-				+ " falha Mecanica " + this.falhasMecanicas.toString()
-				+"Essas são as seguintes avarias: Funilaria "+ this.funilaria.toString() + autoAvaliação;
-		
-		return msg;
+    public SelfEvaluation() {}
 
-	
+    public ElectricalFailures getElectricalFailures() {
+        return electricalFailures;
+    }
 
-}
+    public void setElectricalFailures(ElectricalFailures electricalFailures) {
+        this.electricalFailures = electricalFailures;
+    }
+
+    public MechanicalFailures getMechanicalFailures() {
+        return mechanicalFailures;
+    }
+
+    public void setMechanicalFailures(MechanicalFailures mechanicalFailures) {
+        this.mechanicalFailures = mechanicalFailures;
+    }
+
+    public Bodywork getBodywork() {
+        return bodywork;
+    }
+
+    public void setBodywork(Bodywork bodywork) {
+        this.bodywork = bodywork;
+    }
+
+    @Override
+    public String toString() {
+        return "SelfEvaluation[electricalFailures=" + electricalFailures + ", mechanicalFailures=" + mechanicalFailures + ", bodywork=" + bodywork + "]";
+    }
+
+    public String selfEvaluationReport() {
+        String selfEvaluation =
+            this.electricalFailures.toString() + " " +
+            this.mechanicalFailures.toString() + " " +
+            this.bodywork.toString() + " ";
+
+        String message = "These are the following issues: Electrical Failure " + this.electricalFailures.toString() +
+                         ", Mechanical Failure " + this.mechanicalFailures.toString() +
+                         ", Bodywork " + this.bodywork.toString() + selfEvaluation;
+
+        return message;
+    }
 }
