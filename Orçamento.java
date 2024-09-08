@@ -1,137 +1,106 @@
 package model;
 
+public class Budget {
 
-public class Orçamento {
+    private SelfEvaluation evaluation;
+    private Client clientDetails;
+    private int partsCost;
+    private int laborCost;
+    private int electricalCost;
+    private int mechanicalCost;
+    private int generalExpenses;
+    private int materials;
+    private int serviceWarranty;
 
-		private AutoAvaliação avaliacao;
-		private Cliente dadosCliente;
-		private int valorPecas;
-		private int maoObra;
-		private int valorEletrica;
-		private int valorMecanica;
-		private int gastosGerais;
-		private int material;
-		private int garantiaServico;
+    public Budget(SelfEvaluation evaluation, Client clientDetails, int partsCost,
+                  int laborCost, int electricalCost, int mechanicalCost, int generalExpenses,
+                  int materials, int serviceWarranty) {
+        this.evaluation = evaluation;
+        this.clientDetails = clientDetails;
+        this.partsCost = partsCost;
+        this.laborCost = laborCost;
+        this.electricalCost = electricalCost;
+        this.mechanicalCost = mechanicalCost;
+        this.generalExpenses = generalExpenses;
+        this.materials = materials;
+        this.serviceWarranty = serviceWarranty;
 
-		
-		public Orçamento(AutoAvaliação avaliacao, Cliente dadosCliente, int valorPecas,
-				int maoObra, int valorEletrica, int valorMecanica, int gastosGerais,
-				int material, int garantiaServico) {	
-			
-			this.avaliacao = avaliacao;
-			this.dadosCliente = dadosCliente;
-			this.valorPecas = valorPecas;
-			this.maoObra = maoObra;
-			this.valorEletrica = valorEletrica;
-			this.valorMecanica = valorMecanica;
-			this.gastosGerais = gastosGerais;
-			this.material = material;
-			this.garantiaServico = garantiaServico;
-			
-			System.out.println("Construtor cheio - objeto Orçamento criado!");
+        System.out.println("Full constructor - Budget object created!");
+    }
 
-		}
-		
-		public Orçamento() {
-			System.out.println("Construtor vazio - objeto Orçamento criado!");
-		};
-		
-		public AutoAvaliação getAvaliacao() {
-			return avaliacao;
-		}
-		
-		public void setAvaliacao (AutoAvaliação avaliacao) {
-			this.avaliacao = avaliacao;
-		}
-		
-		public Cliente getDadosCliente() {
-			return dadosCliente;
-		}
-		
-		public void setDadosCliente(Cliente dadosCliente) {	
-			this.dadosCliente = dadosCliente;
-		}
-		
-		public int getValorPecas() {
-			return valorPecas;
-		}
-		
-		public void setValorPecas(int valorPecas) {
-			this.valorPecas = valorPecas;
-		}
-		
-		public int getMaoObra() {
-			return maoObra;
-		}
-		
-		public void setMaoObra(int maoObra) {
-			this.maoObra = maoObra;
-		}
-		
-		public int getValorEletrica() {
-			return valorEletrica;
-		}
-		
-		public void setValorEletrica(int valorEletrica) {
-			this.valorEletrica = valorEletrica;
-		}
-		
-		public  int getValorMecanica() {
-			return valorMecanica;
-		}
-		
-		public void setValorMecanica(int valorMecanica) {
-			this.valorMecanica = valorMecanica;
-		}
-		
-		public int getGastosGerais() {
-			return gastosGerais;
-		}
-		
-		public void setGastosGeraiso(int gastosGerais) {
-			this.gastosGerais = gastosGerais;
-		}
-		
-		public int getMaterial() {
-			return material;
-		}
-		
-		public void setMaterial(int material) {
-			this.material = material;
-		}
-		
-		public int getGarantiaServico() {
-			return garantiaServico;
-		}
-		
-		public void setGarantiaServico (int garantiaServico) {
-			this.garantiaServico = garantiaServico;
-		}
-		
-		
-		@Override
-		public String toString (){
-			return "Orçamento[avaliacao=" + avaliacao + ",dadosCliente=" + dadosCliente + "valorPecas="+ 
-					valorPecas +",maoObra=" + maoObra + ",valorEletrica=" + valorEletrica + ",valorMecanica="
-				+ "" + valorMecanica + ",material=" + material +",garantiaServico=" + garantiaServico + 
-				"]";
-		}
-		
-		public String valorTotalOrcamento() {
-			String nomeCliente = this.dadosCliente.getNome();
-			
-			int valorTotalOrcamento = 
-			this.valorPecas +
-			this.maoObra +
-			this.valorEletrica +
-			this.valorMecanica +
-			this.gastosGerais +
-			this.material +
-			this.garantiaServico;
-			
-			String msg = "O valor total do orçamento do cliente " + nomeCliente +" é de: " + valorTotalOrcamento;
-			
-			return msg;
-		}
-	
+    public Budget() {
+        System.out.println("Empty constructor - Budget object created!");
+    }
+
+    public SelfEvaluation getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(SelfEvaluation evaluation) {
+        this.evaluation = evaluation;
+    }
+
+    public Client getClientDetails() {
+        return clientDetails;
+    }
+
+    public void setClientDetails(Client clientDetails) {
+        this.clientDetails = clientDetails;
+    }
+
+    public int getPartsCost() {
+        return partsCost;
+    }
+
+    public void setPartsCost(int partsCost) {
+        this.partsCost = partsCost;
+    }
+
+    public int getLaborCost() {
+        return laborCost;
+    }
+
+    public void setLaborCost(int laborCost) {
+        this.laborCost = laborCost;
+    }
+
+    public int getElectricalCost() {
+        return electricalCost;
+    }
+
+    public void setElectricalCost(int electricalCost) {
+        this.electricalCost = electricalCost;
+    }
+
+    public int getMechanicalCost() {
+        return mechanicalCost;
+    }
+
+    public void setMechanicalCost(int mechanicalCost) {
+        this.mechanicalCost = mechanicalCost;
+    }
+
+    public int getGeneralExpenses() {
+        return generalExpenses;
+    }
+
+    public void setGeneralExpenses(int generalExpenses) {
+        this.generalExpenses = generalExpenses;
+    }
+
+    public int getMaterials() {
+        return materials;
+    }
+
+    public void setMaterials(int materials) {
+        this.materials = materials;
+    }
+
+    public int getServiceWarranty() {
+        return serviceWarranty;
+    }
+
+    public void setServiceWarranty(int serviceWarranty) {
+        this.serviceWarranty = serviceWarranty;
+    }
 }
