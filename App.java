@@ -5,321 +5,296 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import model.Apolice;
-import model.AutoAvaliação;
-import model.Cliente;
-import model.FalhasEletricas;
-import model.FalhasMecanicas;
-import model.Funilaria;
-import model.Historico;
-import model.Oficinas;
-import model.Orçamento;
-import model.Pedido;
-import model.Veiculo;
+import model.Policy;
+import model.SelfEvaluation;
+import model.Client;
+import model.ElectricalFailures;
+import model.MechanicalFailures;
+import model.Bodywork;
+import model.History;
+import model.Workshops;
+import model.Budget;
+import model.Order;
+import model.Vehicle;
 
 public class App {
-	
-	    private static final LocalDate LocalDate = null;
+    
+    private static final LocalDate LocalDate = null;
 
-		public static void main(String[] args) {
-	      //Cadastrando um cliente
-	    	
-	    	Scanner entrada = new Scanner(System.in);
-	    	
-	    	System.out.println("Tenha em mãos seus dados pessoais");
-	    	
-	    	System.out.println("Insira o nome: ");
-	    	String nomeCliente = entrada.nextLine();
-	    	System.out.println(nomeCliente);
-	    
-	    	System.out.println("Insira o cpf: ");
-	    	long cpfCliente = entrada.nextLong();
-	    	System.out.println(cpfCliente);
-	    	
-	    	entrada.nextLine();
+    public static void main(String[] args) {
+        // Registering a client
 
-	    	System.out.println("Insira o Endereço: ");
-	    	String enderecoCliente = entrada.nextLine();
-	    	System.out.println(enderecoCliente);
+        Scanner input = new Scanner(System.in);
 
-	    	System.out.println("Insira o Telefone:");
-	    	long telefoneCliente = entrada.nextLong();
-	    	System.out.println(telefoneCliente);
+        System.out.println("Have your personal information ready");
 
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira o Email: ");
-	    	String emailCliente = entrada.nextLine();
-	    	System.out.println(emailCliente);
-	    	
-	    	System.out.println("Insira o Sexo: ");
-	    	String sexoCliente = entrada.nextLine();
-	    	System.out.println(sexoCliente);
-	    	
-	    	System.out.println("Insira o Nome da mãe: ");
-	    	String nomeMae = entrada.nextLine();
-	    	System.out.println(nomeMae);
-	    	
-	    	
-	    	
-	    	System.out.println("Insira o Rg: ");
-	    	long rgCliente = entrada.nextLong();
-	    	System.out.println(rgCliente);
-	    	
-	    	Cliente cliente = new Cliente(nomeCliente, cpfCliente,  enderecoCliente, telefoneCliente,
-	    			emailCliente, sexoCliente, nomeMae, rgCliente);
-	    	
-	    	
-	    	System.out.println("Tenha em mãos os dados da sua veiculo");
-	    	
-	    	System.out.println("Insira o ano de fabricação: ");
-	    	int anoFabricacao = entrada.nextInt();
-	    	System.out.println(anoFabricacao);
-	    	
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira a marca: ");
-	    	String marca = entrada.nextLine();
-	    	System.out.println(marca);
-	    	
-	    	System.out.println("Insira o modelo: ");
-	    	int anoModelo = entrada.nextInt();
-	    	System.out.println(anoModelo);
-	    	
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira a Descrição do modelo: ");
-	    	String descricaoModelo = entrada.nextLine();
-	    	System.out.println(descricaoModelo);
-	    	
-	    	System.out.println("Insira o Valor: ");
-	    	int valorVeiculo = entrada.nextInt();
-	    	System.out.println(valorVeiculo);
-	    	
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira o tipo de combustível: ");
-	    	String combustivel = entrada.nextLine();
-	    	System.out.println(combustivel);
-	    	
-	    	System.out.println("Insira o tipo do motor: ");
-	    	String motor = entrada.nextLine();
-	    	System.out.println(motor);
-	    	
-	    	System.out.println("Insira a velocidade máxima: ");
-	    	int velocidade = entrada.nextInt();
-	    	System.out.println(velocidade);
-	    	
-	    	Veiculo veiculo = new Veiculo(cliente, anoFabricacao, marca,  anoModelo, descricaoModelo,
-	    			valorVeiculo, combustivel, motor, velocidade);
-	    	
-	    	List<Veiculo> veiculos = new ArrayList<>();
-	    	veiculos.add(veiculo);
-	    	
-	    	System.out.println("Tenha em mãos os dados da sua Apolice");
-	    
-	    
-	    	System.out.println("Insira a maodaliade de franquia: ");
-	    	String modalidadeFranquia = entrada.nextLine();
-	    	System.out.println(modalidadeFranquia);
-	    	
-	    	System.out.println("Insira o valor do seguro: ");
-	    	int valoSeguro = entrada.nextInt();
-	    	System.out.println(valoSeguro);
-	    	
-	    	System.out.println("Insira a cobertura: ");
-	    	int cobertura = entrada.nextInt();
-	    	System.out.println(cobertura);
-	    	
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira a vigencia do seguro: ");
-	    	String vigenciaSeguro = entrada.nextLine();
-	    	System.out.println(vigenciaSeguro);
-	    	
-	    	System.out.println("Insira o Dpvat: ");
-	    	String dpvat = entrada.nextLine();
-	    	System.out.println(dpvat);
-	    	
-	    	
-	    	
-	    	System.out.println("Insira o valor da franquia: ");
-	    	int valorFranquia = entrada.nextInt();
-	    	System.out.println(valorFranquia);
-	    	
-	    	entrada.nextLine();
-	    	
-	    	System.out.println("Insira o modelo do veiculo: ");
-	    	String modeloVeiculo = entrada.nextLine();
-	    	System.out.println(modeloVeiculo);
-	    	
-	    	System.out.println("Insira o numero Apolice: ");
-	    	int numeroApolice = entrada.nextInt();
-	    	System.out.println(numeroApolice);
-	    	
-	    	
-	    	Apolice apolice = new Apolice(veiculo, cliente, modalidadeFranquia,  valoSeguro, cobertura, vigenciaSeguro, 
-	    			dpvat,null, valorFranquia, modeloVeiculo,numeroApolice);
-	    	
-	    	
-	    	
-	    	
-System.out.println("Tenha em mão o historico do veiculo");
-	    	
-	    	
-	    
-	    	System.out.println("Insira as irregularidades: ");
-	    	String irregularidades = entrada.nextLine();
-	    	System.out.println(irregularidades);
+        System.out.println("Enter your name: ");
+        String clientName = input.nextLine();
+        System.out.println(clientName);
 
-	    	System.out.println("Insira o local do sinistro: ");
-	    	String localSinistro = entrada.nextLine();
-	    	System.out.println(localSinistro);
+        System.out.println("Enter your CPF: ");
+        long clientCpf = input.nextLong();
+        System.out.println(clientCpf);
 
-	    	System.out.println("Insira o tempo de Habilitacao: ");
-	    	String tempoHabilitacao = entrada.nextLine();
-	    	System.out.println(tempoHabilitacao);
-	    	
-	    	System.out.println("Insira as multas: ");
-	    	String multas = entrada.nextLine();
-	    	System.out.println(multas);
-	    	
-	    	System.out.println("Insira a cobertura do Sinistro: ");
-	    	String coberturaSinistro = entrada.nextLine();
-	    	System.out.println(coberturaSinistro);
-	    	
-	    	System.out.println("Insira a descricão dos Danos: ");
-	    	String descricaoDano = entrada.nextLine();
-	    	System.out.println(descricaoDano);
-	    	
-	    	
-	    	
-	    	Historico historico = new Historico(apolice, cliente, veiculos, irregularidades,  localSinistro, tempoHabilitacao, multas,
-	    			coberturaSinistro, descricaoDano);
-	    	
-	    	int opcao = 4;
-	    	FalhasEletricas falhasEletricas = new FalhasEletricas();
-    		FalhasMecanicas falhasMecanicas = new FalhasMecanicas();
-    		Funilaria funilaria = new Funilaria();
-    		AutoAvaliação autoAvaliação = new AutoAvaliação();
-    		
-	    	while(opcao!=0) {
-		    	System.out.println("Voce iniciou o autodiagnostico");
-		    	System.out.println("Para inserir falhas eletricas digite 1 \n" + "Para inserir falhas mecanicas digite 2 \n" + "Para inserir problemas na funilaria digite 3"+ " Para voltar ao menu inicial digite 5" );
-		    	int opcaoAutoDiagnostico = entrada.nextInt();
-		    	
-		    	if(opcaoAutoDiagnostico == 1) {
-		    		
-			    	System.out.println("Altenadores: ");
-			    	boolean altenadores = entrada.nextBoolean();
-			    	
-			    	System.out.println("Correria altenador: ");
-			    	boolean correiaAltenador = entrada.nextBoolean();
-			    	
-			    	System.out.println("Fusiveis: ");
-			    	boolean fusiveis = entrada.nextBoolean();
-			    	
-			    	System.out.println("Sistema ingnicao: ");
-			    	boolean sistemaIngnicao = entrada.nextBoolean();
-			    	
-			    	System.out.println("Iluminacao: ");
-			    	boolean iluminacao = entrada.nextBoolean();
-			    	
-			    	System.out.println("Cabos: ");
-			    	boolean cabos = entrada.nextBoolean();
-			    	
-			    	System.out.println("Velas: ");
-			    	boolean velas = entrada.nextBoolean();
-			    	
-			    	System.out.println("Bobina: ");
-			    	boolean bobina = entrada.nextBoolean();
-			    	
-			    	falhasEletricas = new FalhasEletricas(veiculo, altenadores, correiaAltenador, fusiveis, sistemaIngnicao, iluminacao, cabos, velas, bobina);
-		    	
-		    	
-		    	} 
-		    	
-		    	
-		    	else if (opcaoAutoDiagnostico == 2) {
-		    		
-		    		
-		    		System.out.println("SuperAquecimento: ");
-			    	boolean superAquecimento = entrada.nextBoolean();
-			    	
-			    	System.out.println("Ingnicao: ");
-			    	boolean ingnicao = entrada.nextBoolean();
-			    	
-			    	System.out.println("Barulhos e Ruidos: ");
-			    	boolean barulhosRuidos = entrada.nextBoolean();
-			    	
-			    	System.out.println("Aumento do consumo do Combustivel : ");
-			    	boolean aumentoCombustivel = entrada.nextBoolean();
-			    	
-			    	System.out.println("fumaça Preta: ");
-			    	boolean fumacaPreta = entrada.nextBoolean();
-			    	
-			    	System.out.println("Perda de Potencia: ");
-			    	boolean perdaPotencia = entrada.nextBoolean();
-			    	
-			    	System.out.println("Falhas no reservatorio de Agua: ");
-			    	boolean reservatorioAgua = entrada.nextBoolean();
-			    	
-			    	System.out.println("Aumento da Temperatura: ");
-			    	boolean aumentoTemperatura = entrada.nextBoolean();
-			    	
-			    	falhasMecanicas = new FalhasMecanicas(veiculo, superAquecimento, ingnicao, barulhosRuidos, aumentoCombustivel,
-			    			fumacaPreta, perdaPotencia, reservatorioAgua, aumentoTemperatura);
-			    	
-			    	
-		    	}
-		    	
-		    	
-		    	else if (opcaoAutoDiagnostico == 3) {
-		    		
+        input.nextLine();
 
-			    	System.out.println("Ferrugem: ");
-			    	boolean ferrugem = entrada.nextBoolean();
-			    	
-			    	System.out.println("Martelimho de Ouro: ");
-			    	boolean martelimhoOuro = entrada.nextBoolean();
-			    	
-			    	System.out.println(" Relevos: ");
-			    	boolean relevos = entrada.nextBoolean();
-			    	
-			    	System.out.println(" Rachaduras : ");
-			    	boolean rachaduras = entrada.nextBoolean();
-			    	
-			    	System.out.println("Renovação da Pintura: ");
-			    	boolean renovacaoPintura = entrada.nextBoolean();
-			    	
-			    	System.out.println("Polimento: ");
-			    	boolean polimento = entrada.nextBoolean();
-			    	
-			    	System.out.println("Critalizacão: ");
-			    	boolean critalizacao = entrada.nextBoolean();
-			    	
-			    	System.out.println("Carenagem: ");
-			    	boolean carenagem = entrada.nextBoolean();
-			    	
-			    	funilaria = new Funilaria(veiculo, ferrugem, martelimhoOuro, relevos, rachaduras,
-			    			renovacaoPintura, polimento, critalizacao, carenagem);
-			    	
-		    		
-		    	} else {
-		    	
-	
-		    	autoAvaliação = new AutoAvaliação(falhasEletricas,falhasMecanicas,funilaria);
-		    	opcao = 0;
-	    	}
-	    } 
-	    	
-	    	Orçamento orçamento = new Orçamento(autoAvaliação,cliente, 100, 150, 200,250, 300, 350, 50 );
-	    	
-	    	Oficinas oficina = new Oficinas(orçamento, 1," rua cavalo manco", 11932849483L, 0000000,564239426423651L,"Porto AutoAssit" , 2847,"Mercado Peças" );
-	    	
-	    	Pedido pedido = new Pedido(orçamento, oficina, 1, 01, cliente, 600, 100, 1234, 0000);
-	    	
-	    	entrada.close();
-	}
-	
+        System.out.println("Enter your address: ");
+        String clientAddress = input.nextLine();
+        System.out.println(clientAddress);
+
+        System.out.println("Enter your phone number:");
+        long clientPhone = input.nextLong();
+        System.out.println(clientPhone);
+
+        input.nextLine();
+
+        System.out.println("Enter your email: ");
+        String clientEmail = input.nextLine();
+        System.out.println(clientEmail);
+
+        System.out.println("Enter your gender: ");
+        String clientGender = input.nextLine();
+        System.out.println(clientGender);
+
+        System.out.println("Enter your mother's name: ");
+        String motherName = input.nextLine();
+        System.out.println(motherName);
+
+        System.out.println("Enter your RG: ");
+        long clientRg = input.nextLong();
+        System.out.println(clientRg);
+
+        Client client = new Client(clientName, clientCpf, clientAddress, clientPhone,
+                clientEmail, clientGender, motherName, clientRg);
+
+        System.out.println("Have your vehicle information ready");
+
+        System.out.println("Enter the manufacturing year: ");
+        int manufacturingYear = input.nextInt();
+        System.out.println(manufacturingYear);
+
+        input.nextLine();
+
+        System.out.println("Enter the brand: ");
+        String brand = input.nextLine();
+        System.out.println(brand);
+
+        System.out.println("Enter the model year: ");
+        int modelYear = input.nextInt();
+        System.out.println(modelYear);
+
+        input.nextLine();
+
+        System.out.println("Enter the model description: ");
+        String modelDescription = input.nextLine();
+        System.out.println(modelDescription);
+
+        System.out.println("Enter the vehicle value: ");
+        int vehicleValue = input.nextInt();
+        System.out.println(vehicleValue);
+
+        input.nextLine();
+
+        System.out.println("Enter the fuel type: ");
+        String fuelType = input.nextLine();
+        System.out.println(fuelType);
+
+        System.out.println("Enter the engine type: ");
+        String engineType = input.nextLine();
+        System.out.println(engineType);
+
+        System.out.println("Enter the maximum speed: ");
+        int maxSpeed = input.nextInt();
+        System.out.println(maxSpeed);
+
+        Vehicle vehicle = new Vehicle(client, manufacturingYear, brand, modelYear, modelDescription,
+                vehicleValue, fuelType, engineType, maxSpeed);
+
+        List<Vehicle> vehicles = new ArrayList<>();
+        vehicles.add(vehicle);
+
+        System.out.println("Have your policy information ready");
+
+        System.out.println("Enter the franchise type: ");
+        String franchiseType = input.nextLine();
+        System.out.println(franchiseType);
+
+        System.out.println("Enter the insurance value: ");
+        int insuranceValue = input.nextInt();
+        System.out.println(insuranceValue);
+
+        System.out.println("Enter the coverage: ");
+        int coverage = input.nextInt();
+        System.out.println(coverage);
+
+        input.nextLine();
+
+        System.out.println("Enter the insurance validity: ");
+        String insuranceValidity = input.nextLine();
+        System.out.println(insuranceValidity);
+
+        System.out.println("Enter the DPVAT: ");
+        String dpvat = input.nextLine();
+        System.out.println(dpvat);
+
+        System.out.println("Enter the franchise value: ");
+        int franchiseValue = input.nextInt();
+        System.out.println(franchiseValue);
+
+        input.nextLine();
+
+        System.out.println("Enter the vehicle model: ");
+        String vehicleModel = input.nextLine();
+        System.out.println(vehicleModel);
+
+        System.out.println("Enter the policy number: ");
+        int policyNumber = input.nextInt();
+        System.out.println(policyNumber);
+
+        Policy policy = new Policy(vehicle, client, franchiseType, insuranceValue, coverage, insuranceValidity, 
+                dpvat, null, franchiseValue, vehicleModel, policyNumber);
+
+        System.out.println("Have your vehicle history ready");
+
+        System.out.println("Enter the irregularities: ");
+        String irregularities = input.nextLine();
+        System.out.println(irregularities);
+
+        System.out.println("Enter the accident location: ");
+        String accidentLocation = input.nextLine();
+        System.out.println(accidentLocation);
+
+        System.out.println("Enter the license time: ");
+        String licenseTime = input.nextLine();
+        System.out.println(licenseTime);
+
+        System.out.println("Enter any fines: ");
+        String fines = input.nextLine();
+        System.out.println(fines);
+
+        System.out.println("Enter the accident coverage: ");
+        String accidentCoverage = input.nextLine();
+        System.out.println(accidentCoverage);
+
+        System.out.println("Enter the damage description: ");
+        String damageDescription = input.nextLine();
+        System.out.println(damageDescription);
+
+        History history = new History(policy, client, vehicles, irregularities, accidentLocation, licenseTime, fines,
+                accidentCoverage, damageDescription);
+
+        int option = 4;
+        ElectricalFailures electricalFailures = new ElectricalFailures();
+        MechanicalFailures mechanicalFailures = new MechanicalFailures();
+        Bodywork bodywork = new Bodywork();
+        SelfEvaluation selfEvaluation = new SelfEvaluation();
+
+        while(option != 0) {
+            System.out.println("You started the self-diagnosis");
+            System.out.println("To enter electrical failures press 1 \n" +
+                               "To enter mechanical failures press 2 \n" +
+                               "For bodywork issues press 3\n" +
+                               "To return to the main menu press 5");
+            int selfDiagnosisOption = input.nextInt();
+
+            if(selfDiagnosisOption == 1) {
+                System.out.println("Alternators: ");
+                boolean alternators = input.nextBoolean();
+
+                System.out.println("Alternator belt: ");
+                boolean alternatorBelt = input.nextBoolean();
+
+                System.out.println("Fuses: ");
+                boolean fuses = input.nextBoolean();
+
+                System.out.println("Ignition system: ");
+                boolean ignitionSystem = input.nextBoolean();
+
+                System.out.println("Lighting: ");
+                boolean lighting = input.nextBoolean();
+
+                System.out.println("Cables: ");
+                boolean cables = input.nextBoolean();
+
+                System.out.println("Spark plugs: ");
+                boolean sparkPlugs = input.nextBoolean();
+
+                System.out.println("Coil: ");
+                boolean coil = input.nextBoolean();
+
+                electricalFailures = new ElectricalFailures(vehicle, alternators, alternatorBelt, fuses, ignitionSystem, 
+                        lighting, cables, sparkPlugs, coil);
+            } 
+            else if(selfDiagnosisOption == 2) {
+                System.out.println("Overheating: ");
+                boolean overheating = input.nextBoolean();
+
+                System.out.println("Ignition: ");
+                boolean ignition = input.nextBoolean();
+
+                System.out.println("Noises and rattles: ");
+                boolean noisesRattles = input.nextBoolean();
+
+                System.out.println("Increased fuel consumption: ");
+                boolean increasedFuel = input.nextBoolean();
+
+                System.out.println("Black smoke: ");
+                boolean blackSmoke = input.nextBoolean();
+
+                System.out.println("Loss of power: ");
+                boolean powerLoss = input.nextBoolean();
+
+                System.out.println("Water tank issues: ");
+                boolean waterTank = input.nextBoolean();
+
+                System.out.println("Increased temperature: ");
+                boolean increasedTemperature = input.nextBoolean();
+
+                mechanicalFailures = new MechanicalFailures(vehicle, overheating, ignition, noisesRattles, increasedFuel,
+                        blackSmoke, powerLoss, waterTank, increasedTemperature);
+            }
+            else if(selfDiagnosisOption == 3) {
+                System.out.println("Rust: ");
+                boolean rust = input.nextBoolean();
+
+                System.out.println("Small dents: ");
+                boolean smallDents = input.nextBoolean();
+
+                System.out.println("Bumps: ");
+                boolean bumps = input.nextBoolean();
+
+                System.out.println("Cracks: ");
+                boolean cracks = input.nextBoolean();
+
+                System.out.println("Paint renewal: ");
+                boolean paintRenewal = input.nextBoolean();
+
+                System.out.println("Polishing: ");
+                boolean polishing = input.nextBoolean();
+
+                System.out.println("Sealing: ");
+                boolean sealing = input.nextBoolean();
+
+                System.out.println("Fairing: ");
+                boolean fairing = input.nextBoolean();
+
+                bodywork = new Bodywork(vehicle, rust, smallDents, bumps, cracks,
+                        paintRenewal, polishing, sealing, fairing);
+            } 
+            else {
+                selfEvaluation = new SelfEvaluation(electricalFailures, mechanicalFailures, bodywork);
+                option = 0;
+            }
+        }
+
+        Budget budget = new Budget(selfEvaluation, client, 100, 150, 200, 250, 300, 350, 50);
+
+        Workshops workshop = new Workshops(budget, 1, "Cavalo Manco Street", 11932849483L, 0000000, 564239426423651L, 
+                "Porto AutoAssist", 2847, "Parts Market");
+
+        Order order = new Order(budget, workshop, 1, 01, client, 600, 100, 1234, 0000);
+
+        input.close();
+    }
 }
+
