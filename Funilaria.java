@@ -1,123 +1,113 @@
 package model;
 
+public class Bodywork {
 
+    private Vehicle vehicle;
+    private boolean rust;
+    private boolean smallDentRepair;
+    private boolean bumps;
+    private boolean cracks;
+    private boolean paintRenewal;
+    private boolean polishing;
+    private boolean sealing;
+    private boolean fairing;
 
-public class Funilaria {
+    public Bodywork(Vehicle vehicle, boolean rust, boolean smallDentRepair, boolean bumps,
+                    boolean cracks, boolean paintRenewal, boolean polishing, boolean sealing,
+                    boolean fairing) {
+        this.vehicle = vehicle;
+        this.rust = rust;
+        this.smallDentRepair = smallDentRepair;
+        this.bumps = bumps;
+        this.cracks = cracks;
+        this.paintRenewal = paintRenewal;
+        this.polishing = polishing;
+        this.sealing = sealing;
+        this.fairing = fairing;
 
+        System.out.println("Full constructor - Bodywork object created!");
+    }
 
-		private Veiculo veiculo;
-		private boolean ferrugem;
-		private boolean martelimhoOuro;
-		private boolean relevos ;
-		private boolean rachaduras;
-		private boolean renovacaoPintura;
-		private boolean polimento;
-		private boolean critalizacao;
-		private boolean carenagem;
+    public Bodywork() {
+        System.out.println("Empty constructor - Bodywork object created!");
+    }
 
-		
-		public Funilaria(Veiculo veiculo, boolean ferrugem, boolean martelimhoOuro,
-				boolean relevos, boolean rachaduras, boolean renovacaoPintura, boolean polimento,
-				boolean critalizacao, boolean carenagem) {	
-			
-			this.veiculo = veiculo;
-			this.ferrugem = ferrugem;
-			this.martelimhoOuro = martelimhoOuro;
-			this.relevos = relevos;
-			this.rachaduras = rachaduras;
-			this.renovacaoPintura = renovacaoPintura;
-			this.polimento = polimento;
-			this.critalizacao = critalizacao;
-			this.carenagem = carenagem;
-			
-			System.out.println("Construtor cheio - objeto Historico criado!");
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 
-		}
-		
-		public Funilaria() {
-			System.out.println("Construtor vazio - objeto Historico criado!");
-		};
-		
-		public Veiculo getVeiculo() {
-			return veiculo;
-		}
-		
-		public void setVeiculo (Veiculo veiculo) {
-			this.veiculo = veiculo;
-		}
-		
-		public boolean getFerrugem() {
-			return ferrugem;
-		}
-		
-		public void setFerrugem(boolean ferrugem) {	
-			this.ferrugem = ferrugem;
-		}
-		
-		public boolean getMartelimhoOuro() {
-			return martelimhoOuro;
-		}
-		
-		public void setetMartelimhoOuro(boolean martelimhoOuro) {
-			this.martelimhoOuro = martelimhoOuro;
-		}
-		
-		public boolean getRelevos() {
-			return relevos;
-		}
-		
-		public void setRelevos(boolean relevos) {
-			this.relevos = relevos;
-		}
-		
-		public boolean getRachaduras() {
-			return rachaduras;
-		}
-		
-		public void setRachaduras(boolean rachaduras) {
-			this.rachaduras = rachaduras;
-		}
-		
-		public  boolean getRenovacaoPintura() {
-			return renovacaoPintura;
-		}
-		
-		public void setRenovacaoPintura(boolean renovacaoPintura) {
-			this.renovacaoPintura = renovacaoPintura;
-		}
-		
-		public boolean getPolimento() {
-			return polimento;
-		}
-		
-		public void setPolimento(boolean polimento) {
-			this.polimento = polimento;
-		}
-		
-		public boolean getCritalizacao() {
-			return critalizacao;
-		}
-		
-		public void setCritalizacao(boolean critalizacao) {
-			this.critalizacao = critalizacao;
-		}
-		
-		public boolean getCarenagem() {
-			return carenagem;
-		}
-		
-		public void setCarenagem (boolean carenagem) {
-			this.carenagem = carenagem;
-		}
-		
-			
-		@Override
-		public String toString (){
-			return "Funilaria[veiculo=" + veiculo + ",ferrugem=" + ferrugem + "martelimhoOuro="+ 
-					martelimhoOuro +",relevos=" + relevos + ",rachaduras=" + rachaduras + ",renovacaoPintura="
-				+ "" + renovacaoPintura + ",polimento=" + polimento +",critalizacao=" + critalizacao + 
-				",carenagem="+ carenagem +"]";
-		}
-		
-	
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public boolean getRust() {
+        return rust;
+    }
+
+    public void setRust(boolean rust) {
+        this.rust = rust;
+    }
+
+    public boolean getSmallDentRepair() {
+        return smallDentRepair;
+    }
+
+    public void setSmallDentRepair(boolean smallDentRepair) {
+        this.smallDentRepair = smallDentRepair;
+    }
+
+    public boolean getBumps() {
+        return bumps;
+    }
+
+    public void setBumps(boolean bumps) {
+        this.bumps = bumps;
+    }
+
+    public boolean getCracks() {
+        return cracks;
+    }
+
+    public void setCracks(boolean cracks) {
+        this.cracks = cracks;
+    }
+
+    public boolean getPaintRenewal() {
+        return paintRenewal;
+    }
+
+    public void setPaintRenewal(boolean paintRenewal) {
+        this.paintRenewal = paintRenewal;
+    }
+
+    public boolean getPolishing() {
+        return polishing;
+    }
+
+    public void setPolishing(boolean polishing) {
+        this.polishing = polishing;
+    }
+
+    public boolean getSealing() {
+        return sealing;
+    }
+
+    public void setSealing(boolean sealing) {
+        this.sealing = sealing;
+    }
+
+    public boolean getFairing() {
+        return fairing;
+    }
+
+    public void setFairing(boolean fairing) {
+        this.fairing = fairing;
+    }
+
+    @Override
+    public String toString() {
+        return "Bodywork[vehicle=" + vehicle + ", rust=" + rust + ", smallDentRepair=" + smallDentRepair + 
+               ", bumps=" + bumps + ", cracks=" + cracks + ", paintRenewal=" + paintRenewal + 
+               ", polishing=" + polishing + ", sealing=" + sealing + ", fairing=" + fairing + "]";
+    }
 }
