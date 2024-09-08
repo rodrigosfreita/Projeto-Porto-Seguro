@@ -1,114 +1,100 @@
 package model;
 
+public class Client {
+    
+    private String name;
+    private long cpf;
+    private String address;
+    private long phone;
+    private String email;
+    private String gender;
+    private String motherName;
+    private long rg;
 
-public class Cliente {
-	
-	private String nome;
-	private long cpf;
-	private String endereco;
-	private long telefone;
-	private String email;
-	private String sexo;
-	private String nomeMae;
-	private long rg;
+    public Client(String name, long cpf, String address, long phone, String email, String gender, String motherName, long rg) {        
+        this.name = name;
+        this.cpf = cpf;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.motherName = motherName;
+        this.rg = rg;
+        
+        System.out.println("Full constructor - Client object created!");
+    }
 
-	
-	public Cliente(String nome, long cpf, String endereco, long telefone, String email, String sexo, String nomeMae, long rg) {		
-		this.nome = nome;
-		this.cpf = cpf;
-		this.endereco = endereco;
-		this.telefone = telefone;
-		this.email = email;
-		this.sexo = sexo;
-		this.nomeMae = nomeMae;
-		this.rg = rg;
-		
-		System.out.println("Construtor cheio - objeto Cliente criado!");
+    public Client() {
+        System.out.println("Empty constructor - Client object created!");
+    }
 
-	}
-	
-	public Cliente() {
-		System.out.println("Construtor vazio - objeto Cliente criado!");
-	};
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome (String nome) {
-		this.nome = nome;
-	}
-	
-	public long getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(long cpf) {	
-		this.cpf = cpf;
-	}
-	
-	public String getEndereco() {
-		return endereco;
-	}
-	
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	
-	public long getTelefone() {
-		return telefone;
-	}
-	
-	public void setTelefone(long telefone) {
-		this.telefone = telefone;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public  String getSexo() {
-		return sexo;
-	}
-	
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-	
-	public String getNome_mae() {
-		return nomeMae;
-	}
-	
-	public void setNome_mae(String nome_mae) {
-		this.nomeMae = nome_mae;
-	}
-	
-	
-	
-	
-	public long getRg() {
-		return rg;
-	}
-	
-	public void setRg (long rg) {
-		this.rg = rg;
-	}
-	
-	@Override
-	public String toString (){
-		return "Cliente[nome=" + nome + ",cpf=" + cpf + ",endereco="+ endereco +",telefone=" + telefone + ",email=" 
-	+ email + ",sexo=" + sexo + ",nome_mae=" + nomeMae + ",rg="+ rg +"]";
-	}
-	
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(long phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getMotherName() {
+        return motherName;
+    }
+
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
+    }
+
+    public long getRg() {
+        return rg;
+    }
+
+    public void setRg(long rg) {
+        this.rg = rg;
+    }
+
+    @Override
+    public String toString() {
+        return "Client[name=" + name + ", cpf=" + cpf + ", address=" + address + ", phone=" + phone + 
+                ", email=" + email + ", gender=" + gender + ", motherName=" + motherName + ", rg=" + rg + "]";
+    }
 }
-
-
-
-
-
-
