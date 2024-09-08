@@ -1,128 +1,115 @@
 package model;
 
-import java.time.LocalDate;
-import java.util.Date;
+public class Order {
 
-public class Pedido {
-	
-	private Orçamento orcamento;
-	private Oficinas oficina;
-	private int numeroFunilaria;
-	private int numeroOficinas;
-	private Cliente cpfCliente;
-	private int valorConcerto;
-	private int valorRevisao;
-	private int notaFiscal;
-	private int codigoCompra;
+    private Budget budget;
+    private Workshops workshop;
+    private int bodyworkNumber;
+    private int workshopNumber;
+    private Client clientCpf;
+    private int repairCost;
+    private int revisionCost;
+    private int invoiceNumber;
+    private int purchaseCode;
 
-	
-	public Pedido(Orçamento orcamento, Oficinas oficina, int numeroFunilaria,
-			int numeroOficinas, Cliente cpfCliente, int valorConcerto, int valorRevisao,
-			int notaFiscal, int codigoCompra) {
-		
-		
-		this.orcamento = orcamento;
-		this.oficina = oficina;
-		this.numeroFunilaria = numeroFunilaria;
-		this.numeroOficinas = numeroOficinas;
-		this.cpfCliente = cpfCliente;
-		this.valorConcerto = valorConcerto;
-		this.valorRevisao = valorRevisao;
-		this.notaFiscal = notaFiscal;
-		this.codigoCompra = codigoCompra;
-		
-		
-		System.out.println("Construtor cheio - objeto Pedido criado!");
+    public Order(Budget budget, Workshops workshop, int bodyworkNumber,
+                 int workshopNumber, Client clientCpf, int repairCost, int revisionCost,
+                 int invoiceNumber, int purchaseCode) {
+        
+        this.budget = budget;
+        this.workshop = workshop;
+        this.bodyworkNumber = bodyworkNumber;
+        this.workshopNumber = workshopNumber;
+        this.clientCpf = clientCpf;
+        this.repairCost = repairCost;
+        this.revisionCost = revisionCost;
+        this.invoiceNumber = invoiceNumber;
+        this.purchaseCode = purchaseCode;
 
-	}
-	
-	public Pedido() {
-		System.out.println("Construtor vazio - objeto Pedido criado!");
-	};
-	
-	public Orçamento getOrcamento() {
-		return orcamento;
-	}
-	
-	public void setOrçamento (Orçamento orcamento) {
-		this.orcamento = orcamento;
-	}
-	
-	public int getNumeroOficinas() {
-		return numeroOficinas;
-	}
-	
-	public void setNumeroOficinas(int numeroOficinas) {	
-		this.numeroOficinas = numeroOficinas;
-	}
-	
-	public Oficinas getOficina() {
-		return oficina;
-	}
-	
-	public void setOficina(Oficinas oficina) {
-		this.oficina = oficina;
-	}
-	
-	public int getNumeroFunilaria() {
-		return numeroFunilaria;
-	}
-	
-	public void setNumeroFunilaria(int numeroFunilaria) {
-		this.numeroFunilaria = numeroFunilaria;
-	}
-	
-	public Cliente getCpfCliente() {
-		return cpfCliente;
-	}
-	
-	public void setCpfCliente(Cliente cpfCliente) {
-		this.cpfCliente = cpfCliente;
-	}
-	
-	public  int getValorConcerto() {
-		return valorConcerto;
-	}
-	
-	public void setValorConcerto(int valorConcerto) {
-		this.valorConcerto = valorConcerto;
-	}
-	
-	public int getValorRevisao() {
-		return valorRevisao;
-	}
-	
-	public void setValorRevisao(int valorRevisao) {
-		this.valorRevisao = valorRevisao;
-	}
-	
-	public int getNotaFiscal() {
-		return notaFiscal;
-	}
-	
-	public void setNotaFiscal(int notaFiscal) {
-		this.notaFiscal = notaFiscal;
-	}
-	
-	public int getCodigoCompra() {
-		return codigoCompra;
-	}
-	
-	public void setCodigoCompra (int codigoCompra) {
-		this.codigoCompra = codigoCompra;
-	}
-	
+        System.out.println("Full constructor - Order object created!");
+    }
 
-	
-	
-	public String gerarPedido (){
-		return "Pedido[orcamento=" + orcamento + ",oficina=" + oficina + 
-				",numeroFunilaria="+ numeroFunilaria +",numeroOficinas=" + numeroOficinas + ",cpfCliente=" + cpfCliente + ","
-			+ "valorConcerto=" + valorConcerto + ",valorRevisao=" + valorRevisao +",notaFiscal=" + notaFiscal + ","
-					+ "codigoCompra="+ codigoCompra + "dataCompra]";
-	}
+    public Order() {
+        System.out.println("Empty constructor - Order object created!");
+    }
 
-	
+    public Budget getBudget() {
+        return budget;
+    }
 
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+
+    public int getWorkshopNumber() {
+        return workshopNumber;
+    }
+
+    public void setWorkshopNumber(int workshopNumber) {
+        this.workshopNumber = workshopNumber;
+    }
+
+    public Workshops getWorkshop() {
+        return workshop;
+    }
+
+    public void setWorkshop(Workshops workshop) {
+        this.workshop = workshop;
+    }
+
+    public int getBodyworkNumber() {
+        return bodyworkNumber;
+    }
+
+    public void setBodyworkNumber(int bodyworkNumber) {
+        this.bodyworkNumber = bodyworkNumber;
+    }
+
+    public Client getClientCpf() {
+        return clientCpf;
+    }
+
+    public void setClientCpf(Client clientCpf) {
+        this.clientCpf = clientCpf;
+    }
+
+    public int getRepairCost() {
+        return repairCost;
+    }
+
+    public void setRepairCost(int repairCost) {
+        this.repairCost = repairCost;
+    }
+
+    public int getRevisionCost() {
+        return revisionCost;
+    }
+
+    public void setRevisionCost(int revisionCost) {
+        this.revisionCost = revisionCost;
+    }
+
+    public int getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
+    }
+
+    public int getPurchaseCode() {
+        return purchaseCode;
+    }
+
+    public void setPurchaseCode(int purchaseCode) {
+        this.purchaseCode = purchaseCode;
+    }
+
+    public String generateOrder() {
+        return "Order[budget=" + budget + ", workshop=" + workshop + 
+               ", bodyworkNumber=" + bodyworkNumber + ", workshopNumber=" + workshopNumber + 
+               ", clientCpf=" + clientCpf + ", repairCost=" + repairCost + 
+               ", revisionCost=" + revisionCost + ", invoiceNumber=" + invoiceNumber + 
+               ", purchaseCode=" + purchaseCode + ", purchaseDate]";
+    }
 }
-
